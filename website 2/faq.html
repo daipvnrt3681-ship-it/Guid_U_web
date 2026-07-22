@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q&amp;A | Guide U</title>
+<meta name="description" content="Guide Uのよくある質問。対象年齢・料金・予約・録画・安全性・キャンセルなどのQ&Aと、運営への質問窓口。">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/config.js"></script>
+<style>
+main{padding:64px 0 96px}
+h1{font-size:clamp(26px,4vw,34px);font-weight:900;line-height:1.4;text-align:center}
+.lead-c{color:var(--muted);text-align:center;margin:12px auto 8px;max-width:520px}
+.faq-wrap{max-width:760px;margin:0 auto}
+.ask-band{background:var(--teal-50);border:1px solid var(--teal-100);border-radius:20px;padding:34px 30px;text-align:center;margin-top:56px}
+.ask-band h2{font-size:20px;font-weight:900;margin-bottom:8px}
+.ask-band p{font-size:14px;color:var(--muted);margin-bottom:22px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo"><img src="assets/icon.png" alt="Guide U" onerror="this.style.display='none'">Guide <b>U</b></a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_student">高校生の方へ</a>
+      <a href="parents.html" data-i18n="nav_parent">保護者の方へ</a>
+      <a href="mentor.html" data-i18n="nav_mentor">大学生の方へ</a>
+      <a href="faq.html" class="current" data-i18n="nav_faq">Q&amp;A</a>
+    </div>
+    <div class="nav-cta">
+      <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      <a href="register.html" class="btn btn-primary btn-sm" data-i18n="nav_register">事前予約</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap faq-wrap">
+    <h1 data-i18n="title">よくある質問</h1>
+    <p class="lead-c" data-i18n="lead">見つからない場合は、ページ下部から運営に直接質問できます。</p>
+
+    <div class="faq-group" id="common">
+      <h3 data-i18n="g0">サービスについて</h3>
+      <details><summary data-i18n="q1">誰が使えますか？</summary><div class="a" data-i18n="a1">13歳以上の方がご利用いただけます。18歳未満の方は保護者（法定代理人）の同意が必要です。ロールは生徒・メンター・保護者（同一アプリ）があり、学校契約でのご利用にも対応予定です。</div></details>
+      <details><summary data-i18n="q2">いつから使えますか？</summary><div class="a" data-i18n="a2">モバイルアプリ（App Store / Google Play）で近日公開予定です。事前予約いただいた方に、ストア公開時にメールでお知らせします。</div></details>
+      <details><summary data-i18n="q3">料金はかかりますか？</summary><div class="a" data-i18n="a3">有料なのはメンターセッションのみで、チャット相談1,500円／30分、ビデオ相談2,500円／30分（いずれも税込・30分単位切り上げ・予定価格）です。表示価格がお支払い総額で、メンターごとの個別価格はありません。なお決済（Stripe）の準備が完了するまでの間、アプリ内で代金を請求しない場合があります。</div></details>
+      <details><summary data-i18n="q4">個人情報はどのように扱われますか？</summary><div class="a" data-i18n="a4">収集する情報と保存期間はプライバシーポリシーに定めています。要点は、録画等は原則90日・チャット本文は原則365日・添付は約3日で削除、退会後は原則30日以内に削除または匿名化です。カード番号はStripeが処理し、Guide Uのサーバーには保存されません。詳細は保護者向けページとプライバシーポリシー全文をご覧ください。</div></details>
+    </div>
+
+    <div class="faq-group" id="student">
+      <h3 data-i18n="g1">相談・予約について</h3>
+      <details><summary data-i18n="q5">予約にはどんな種類がありますか？</summary><div class="a" data-i18n="a5">3通りあります。①メンターの公開シフトから選ぶ（条件を満たせば選択時点で確定。飛び入り受付時間内は直前予約できる場合あり）、②希望日時のリクエスト（開始48時間以上前。メンターの承認で確定し、承認前は料金がかかりません。48時間承認がなければ自動棄却）、③条件を提示してメンターを募集し、応募者を採用して確定、です。</div></details>
+      <details><summary data-i18n="q6">ビデオ通話は録画されますか？</summary><div class="a" data-i18n="a6">録画に同意した場合のみ通話できます（同意がなければ通話は開始されません）。録画は安全確認やトラブル対応などのために保存され、原則90日で削除されます。運営がすべての通話を常時監視するものではありません。</div></details>
+      <details><summary data-i18n="q7">メンターと連絡先を交換してもいいですか？</summary><div class="a" data-i18n="a7">できません。連絡先・SNSの交換、アプリ外決済への誘導、オフラインで会う勧誘は禁止です。チャットには連絡先らしき文言や画像を検知する仕組みがあり、違反は累積ペナルティの対象になります。</div></details>
+      <details><summary data-i18n="q8">キャンセル料はかかりますか？</summary><div class="a" data-i18n="a8">開始24時間前まで無料、12〜24時間前は25%、2〜12時間前は50%、2時間未満・無断欠席は100%です（日本時間基準）。メンター都合のキャンセルは、時間を問わず全額返金（または決済解除）＋補講権1回が付与されます。詳細はフッターの「予約・キャンセル・返金」をご覧ください。</div></details>
+      <details><summary data-i18n="q9">トラブルがあったときは？</summary><div class="a" data-i18n="a9">アプリ内のブロック・通報機能をご利用ください。通報は運営が確認します。無断欠席などの判定への異議申立は、事象から72時間以内に受け付けます。緊急性のある事案は警察等の公的機関にご相談ください。</div></details>
+    </div>
+
+    <div class="faq-group" id="parent">
+      <h3 data-i18n="g2">保護者の方</h3>
+      <details><summary data-i18n="q10">保護者は何ができますか？</summary><div class="a" data-i18n="a10">同一アプリの「保護者」ロールで参加し、ペアリングIDでお子さまと紐付けたうえで、設定した閲覧レベル（要約＋危険フラグ／チャット全文／録画再生）の範囲で確認できます。既定の設定はゆるやかで、必要に応じて強められる設計です。</div></details>
+      <details><summary data-i18n="q11">学校として導入できますか？</summary><div class="a" data-i18n="a11">学校契約では録画必須・要約共有・閲覧レベルの設定が可能です。導入のご相談はお問い合わせフォームからご連絡ください。</div></details>
+    </div>
+
+    <div class="faq-group" id="mentor">
+      <h3 data-i18n="g3">大学生メンターの方</h3>
+      <details><summary data-i18n="q12">メンターになる条件はありますか？</summary><div class="a" data-i18n="a12">本人・在籍確認（大学メールまたは卒業生向けの確認経路。年1回更新）と、行動規範への同意が必要です。特別なスキルや資格は不要です。</div></details>
+      <details><summary data-i18n="q13">報酬はありますか？</summary><div class="a" data-i18n="a13">手取りの目安はチャット400円・ビデオ700円（いずれも30分単位、特定商取引法に基づく表記ベース）です。条件の詳細は、事前予約いただいた方に正式リリース前にご案内します。</div></details>
+      <details><summary data-i18n="q14">海外の大学に通っていても参加できますか？</summary><div class="a" data-i18n="a14">はい。オンライン完結のため、海外の大学に通う学生の参加も歓迎しています。留学を考える高校生にとって貴重な存在です。</div></details>
+      <details><summary data-i18n="q15">自分の都合でキャンセルしたらどうなりますか？</summary><div class="a" data-i18n="a15">その枠の報酬は入らず、生徒には全額返金＋補講権が付与されます。開始2〜24時間前は料金相当の25%、2時間未満は50%が他の報酬から減額され、直前キャンセルは無断欠席カウント+0.5、無断欠席は+1が加算されます（合計3.0で原則30日間の利用停止）。詳細は大学生向けページをご覧ください。</div></details>
+    </div>
+
+    <div class="ask-band">
+      <h2 data-i18n="ask_t">解決しない質問がありますか？</h2>
+      <p data-i18n="ask_b">運営に直接質問できます。いただいた質問は今後このページにも反映していきます。</p>
+      <a href="#" data-form="qa" class="btn btn-primary" data-i18n="ask_cta">運営に質問する</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo" style="font-size:17px"><img src="assets/icon.png" alt="" onerror="this.style.display='none'">Guide <b>U</b></div>
+    <div class="foot-links">
+      <a href="index.html" data-i18n="f_student">高校生の方へ</a>
+      <a href="parents.html" data-i18n="f_parent">保護者の方へ</a>
+      <a href="mentor.html" data-i18n="f_mentor">大学生の方へ</a>
+      <a href="register.html" data-i18n="f_register">事前予約</a>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <div class="links">
+      <a href="#" data-form="terms" data-i18n="l_terms">利用規約</a>
+      <a href="#" data-form="privacy" data-i18n="l_privacy">プライバシーポリシー</a>
+      <a href="#" data-form="tokusho" data-i18n="l_tokusho">特定商取引法に基づく表記</a>
+      <a href="#" data-form="booking" data-i18n="l_booking">予約・キャンセル・返金</a>
+      <a href="#" data-form="qa" data-i18n="l_contact">お問い合わせ</a>
+      <a href="#" data-form="instagram">Instagram</a>
+    </div>
+    <div data-i18n="f_c">© 2026 Guide U｜運営: Guide U 運営事務局</div>
+  </div>
+</footer>
+
+<script>
+window.I18N_EN = {
+  nav_student:"For Students", nav_parent:"For Parents", nav_mentor:"For Mentors", nav_faq:"Q&A", nav_register:"Pre-register",
+  title:"Frequently asked questions",
+  lead:"Can't find your answer? Ask us directly at the bottom of this page.",
+  g0:"About the service",
+  q1:"Who can use Guide U?", a1:"Anyone aged 13 or older. Users under 18 need the consent of a parent or legal guardian. Roles include student, mentor, and parent (all in the same app), with school contracts also planned.",
+  q2:"When can I start using it?", a2:"The mobile app (App Store / Google Play) is coming soon. Pre-registered users will be emailed when it hits the stores.",
+  q3:"Does it cost anything?", a3:"Only mentor sessions are paid: chat ¥1,500 / 30 min and video ¥2,500 / 30 min (tax included, billed in 30-minute units rounded up; planned prices). The displayed price is the total — no per-mentor pricing. Until payment processing (Stripe) is ready, we may not charge fees in the app.",
+  q4:"How is my personal data handled?", a4:"What we collect and how long we keep it is set out in the Privacy Policy. Key points: recordings ~90 days, chat text ~365 days, attachments ~3 days; after account deletion, data is deleted or anonymized within 30 days in principle. Card numbers are processed by Stripe and never stored on Guide U servers. See the parents page and the full Privacy Policy.",
+  g1:"Consultations & bookings",
+  q5:"What kinds of bookings are there?", a5:"Three: (1) pick from a mentor's published open slots (confirmed on selection if conditions are met; last-minute booking may be possible during walk-in hours); (2) request your own date and time (48+ hours ahead; confirmed on mentor approval, no charge before approval, auto-declined after 48 hours unapproved); (3) post your conditions to recruit mentors, and confirm by hiring an applicant.",
+  q6:"Are video calls recorded?", a6:"Calls only take place if you consent to recording (no consent, no call). Recordings are kept for safety checks and dispute handling and deleted after 90 days as a rule. We do not constantly monitor all calls.",
+  q7:"Can I exchange contact details with my mentor?", a7:"No. Exchanging contact details or SNS, steering payments outside the app, and soliciting offline meetings are prohibited. Chat has detection for contact-like text and images, and violations accumulate penalties.",
+  q8:"Are there cancellation fees?", a8:"Free until 24 hours before start; 25% at 12–24 hours; 50% at 2–12 hours; 100% under 2 hours or for no-shows (Japan time). If the mentor cancels, you receive a full refund (or payment release) plus one make-up session credit regardless of timing. See “Booking & Refund Policy” in the footer for details.",
+  q9:"What if there's trouble?", a9:"Use the in-app block and report functions — reports go to our review queue. Disputes over no-show determinations are accepted within 72 hours of the event. For urgent situations, contact the police or other public authorities.",
+  g2:"For parents",
+  q10:"What can parents do?", a10:"Join with the Parent role in the same app, link to your child via pairing ID, and review within the visibility level you set (summary + risk flags / full chat / recording playback). Defaults are permissive and can be tightened as needed.",
+  q11:"Can schools adopt Guide U?", a11:"School contracts support required recording, shared summaries, and configurable visibility levels. Please reach out via the contact form.",
+  g3:"For university student mentors",
+  q12:"Are there requirements to become a mentor?", a12:"Identity and enrollment verification (university email, or an alumni route; renewed annually) and agreement to the code of conduct. No special skills or qualifications needed.",
+  q13:"Is there compensation?", a13:"Approximate take-home is ¥400 for chat and ¥700 for video (per 30-minute unit, based on the Commercial Transactions Act disclosure). Full terms will be shared with pre-registered mentors before official release.",
+  q14:"Can I join from a university overseas?", a14:"Yes. Everything is online, and students at overseas universities are very welcome — you're invaluable to high schoolers considering study abroad.",
+  q15:"What happens if I cancel a session myself?", a15:"You receive no pay for that slot, and the student gets a full refund plus a make-up session credit. Cancelling 2–24 hours before start deducts 25% of the session fee from your other earnings; under 2 hours deducts 50% and adds +0.5 to your no-show count; a no-show adds +1 (a total of 3.0 results in a 30-day suspension as a rule). See the mentors page for details.",
+  ask_t:"Still have a question?",
+  ask_b:"Ask us directly. Your questions will also help us grow this page.",
+  ask_cta:"Ask the team",
+  f_student:"For Students", f_parent:"For Parents", f_mentor:"For Mentors", f_register:"Pre-register",
+  l_terms:"Terms of Service", l_privacy:"Privacy Policy", l_tokusho:"Commercial Transactions Act", l_booking:"Booking & Refund Policy", l_contact:"Contact",
+  f_c:"© 2026 Guide U | Operated by the Guide U Team"
+};
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

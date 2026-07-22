@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保護者・学校の方へ | Guide U</title>
+<meta name="description" content="Guide Uの保護者ロールと見守りの仕組み、安全への取り組み、データの取り扱いについてご説明します。">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/config.js"></script>
+<style>
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px;text-align:left}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 28px}
+.pillar .no{font-family:'Inter',sans-serif;font-weight:800;font-size:13px;color:var(--teal);letter-spacing:.1em;margin-bottom:8px}
+.pillar h3{font-size:18px;font-weight:900;margin-bottom:10px}
+.pillar p{font-size:14px;color:var(--muted)}
+.detail-list{max-width:800px;margin:36px auto 0;text-align:left}
+.detail-list li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px;font-size:14px;color:var(--text);list-style:none;display:flex;gap:12px;align-items:flex-start}
+.detail-list li::before{content:"✓";color:var(--teal-600);font-weight:800;flex:none}
+.detail-list li span b{font-weight:700}
+.level-tbl td:first-child{font-weight:700;color:var(--teal-800);white-space:nowrap}
+@media(max-width:800px){.two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo"><img src="assets/icon.png" alt="Guide U" onerror="this.style.display='none'">Guide <b>U</b></a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_student">高校生の方へ</a>
+      <a href="parents.html" class="current" data-i18n="nav_parent">保護者の方へ</a>
+      <a href="mentor.html" data-i18n="nav_mentor">大学生の方へ</a>
+      <a href="faq.html" data-i18n="nav_faq">Q&amp;A</a>
+    </div>
+    <div class="nav-cta">
+      <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      <a href="register.html#parent" class="btn btn-primary btn-sm" data-i18n="nav_register">事前予約</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker" data-i18n="hero_kicker">保護者・学校の方へ</span>
+      <h1 data-i18n="hero_title">「なんとなく」の進路選びを、<br><em>「聞いて決める」</em>進路選びへ。</h1>
+      <p class="sub" data-i18n="hero_sub">Guide Uは、お子さまが先輩メンターにチャットやビデオで相談できる教育アプリです。対象は13歳以上で、18歳未満の利用には保護者（法定代理人）の同意が必要です。</p>
+      <div class="hero-btns">
+        <a href="register.html#parent" class="btn btn-primary" data-i18n="hero_cta1">保護者として事前予約する</a>
+        <a href="#" data-form="qa" class="btn btn-ghost" data-i18n="hero_cta2">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div style="padding:4px">
+        <h3 style="font-size:16px;font-weight:900;margin-bottom:12px" data-i18n="hv_t">保護者も、同じアプリで。</h3>
+        <p style="font-size:14px;color:var(--muted);line-height:1.9" data-i18n="hv_b">保護者の方は同一アプリの「保護者」ロールで参加し、ペアリングIDでお子さまと紐付けます。設定した閲覧レベルの範囲で、相談の様子を見守ることができます。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap center">
+    <span class="kicker" data-i18n="role_kicker">保護者・学校の関わり方</span>
+    <h2 data-i18n="role_title">見守りの強さは、選べます</h2>
+    <p class="lead" data-i18n="role_lead">既定の設定はゆるやかで、より強い見守りが必要な場合に、必要な側が権限を設定する設計です。</p>
+    <div class="two-col">
+      <div class="pillar">
+        <div class="no" data-i18n="r1_no">保護者の方</div>
+        <h3 data-i18n="r1_t">ペアリングして見守る</h3>
+        <p data-i18n="r1_b">同一アプリの「保護者」ロールでアカウントを作成し、ペアリングIDでお子さまと紐付けます。設定した閲覧レベル（要約＋危険フラグ／チャット全文／録画再生）の範囲で確認できます。</p>
+      </div>
+      <div class="pillar">
+        <div class="no" data-i18n="r2_no">学校でのご利用</div>
+        <h3 data-i18n="r2_t">学校契約は録画必須＋要約共有</h3>
+        <p data-i18n="r2_b">学校契約でご利用の場合は録画が必須となり、相談内容の要約共有と、閲覧レベルの設定（要約＋危険フラグ／チャット全文／録画再生）が可能です。担任の先生が録画を再生するには、閲覧レベル「チャット全文＋録画再生」の設定が別途必要です。</p>
+      </div>
+    </div>
+    <ul class="notes" style="margin-top:26px">
+      <li data-i18n="role_n1">運営はアーカイブ（記録）を提供しますが、すべての通話・チャットを常時監視するものではありません。緊急性のある事案は警察等の公的機関にご相談ください。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="safety" style="background:#fff">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="sf_kicker">安全への取り組み</span>
+    <h2 data-i18n="sf_title">方針は2つ。「密室化しない」「溜めすぎない」</h2>
+    <div class="two-col">
+      <div class="pillar">
+        <div class="no">POLICY 1</div>
+        <h3 data-i18n="p1_t">密室化しない</h3>
+        <p data-i18n="p1_b">相談をアプリの外に持ち出させず、記録と通報の仕組みで守ります。連絡先交換の禁止、検知機能、ブロック・通報がその柱です。</p>
+      </div>
+      <div class="pillar">
+        <div class="no">POLICY 2</div>
+        <h3 data-i18n="p2_t">長く溜めすぎない</h3>
+        <p data-i18n="p2_b">記録は権限・期限を定めて非公開で保管し、期限が過ぎたものは適切に削除します。「守るための記録」を「リスクになる蓄積」にしないための方針です。</p>
+      </div>
+    </div>
+    <ul class="detail-list">
+      <li><span data-i18n="d1"><b>年齢と同意</b>：登録時に利用規約・プライバシーポリシーへの同意と13歳以上であることを確認し、18歳未満は法定代理人の同意を申告いただきます。</span></li>
+      <li><span data-i18n="d2"><b>アプリ外への誘導の禁止</b>：連絡先・SNSの交換、アプリ外決済への誘導、オフラインで会う勧誘は禁止です。</span></li>
+      <li><span data-i18n="d3"><b>チャットの検知</b>：連絡先らしき文言や言い換え表現を検知してブロック・フラグを立てます。画像に含まれる連絡先（スクリーンショット等）もOCRで検知しブロックし得ます。違反は累積ペナルティの対象です。</span></li>
+      <li><span data-i18n="d4"><b>ブロック・通報</b>：気になるやりとりはワンタップで通報でき、運営の確認キューに入ります。</span></li>
+      <li><span data-i18n="d5"><b>録画への事前同意</b>：ビデオ通話（Daily.co）は入室前に録画への同意が必須で、同意がなければ通話できません。保存の目的・期間・運営が常時監視しないことを同意画面でお伝えします。</span></li>
+      <li><span data-i18n="d6"><b>保存期間の管理</b>：チャット添付は原則送信から約3日で削除（通報時は保全）。チャット本文は原則365日、録画等は原則90日（紛争時は法的保全のため延長し得ます）。利用者によるクラウドへの永久保存機能はありません。</span></li>
+      <li><span data-i18n="d7"><b>参加履歴</b>：入退室の履歴を記録し、開始10分時点の参加状況で無断欠席を自動判定します。</span></li>
+      <li><span data-i18n="d8"><b>保管の安全</b>：録画は暗号化・アクセス制御・署名付きURLでの管理を想定し、日本リージョンで運用します。</span></li>
+    </ul>
+    <ul class="notes" style="margin-top:24px">
+      <li data-i18n="sf_note">これらの機能は危険を完全に防ぐことを保証するものではありません。緊急時は警察等の公的機関にご相談ください。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="data">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="dt_kicker">データの取り扱い（要約）</span>
+    <h2 data-i18n="dt_title">何を集め、いつまで保存するか</h2>
+    <p class="lead" data-i18n="dt_lead">以下はプライバシーポリシーの要約です。正確な内容は全文をご確認ください。</p>
+    <div class="two-col">
+      <div class="pillar">
+        <h3 data-i18n="dt1_t">収集し得る情報</h3>
+        <p data-i18n="dt1_b">登録情報、相談・チャット・予約・参加履歴、同意済みの録画・文字起こし・要約・安全フラグ、ブロック・通報、端末・利用状況、プッシュ通知トークン、決済メタデータ（カード番号はStripe側で処理）。</p>
+      </div>
+      <div class="pillar">
+        <h3 data-i18n="dt2_t">保存期間の要点</h3>
+        <p data-i18n="dt2_b">録画等は原則90日、チャット本文は原則365日、チャット添付は約3日。退会後は原則30日以内に削除または匿名化します（法令上の例外あり）。</p>
+      </div>
+    </div>
+    <ul class="notes" style="margin-top:26px">
+      <li data-i18n="dt_n1">処理の委託先（例）: Supabase、Daily.co、AWS（録画）、Firebase（プッシュ通知）、Stripe（有料化時）、安全確認等のための外部AI（OpenAI / Anthropic / Google Gemini 等）。</li>
+      <li data-i18n="dt_n2">Web版を提供する場合、サービス提供のためCookie等を使用する場合があります（プライバシーポリシーに記載）。</li>
+    </ul>
+    <div style="margin-top:28px">
+      <a href="#" data-form="privacy" class="btn btn-ghost btn-sm" data-i18n="dt_link">プライバシーポリシー全文を読む（外部ページ）</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2 data-i18n="cta_title">お子さまの「聞いてみたい」を、後押ししてください</h2>
+      <p data-i18n="cta_sub">事前予約いただいた方に、ストア公開時にメールでお知らせします。</p>
+      <a href="register.html#parent" class="btn btn-white" data-i18n="cta_btn">保護者として事前予約する</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo" style="font-size:17px"><img src="assets/icon.png" alt="" onerror="this.style.display='none'">Guide <b>U</b></div>
+    <div class="foot-links">
+      <a href="index.html" data-i18n="f_student">高校生の方へ</a>
+      <a href="parents.html" data-i18n="f_parent">保護者の方へ</a>
+      <a href="mentor.html" data-i18n="f_mentor">大学生の方へ</a>
+      <a href="faq.html">Q&amp;A</a>
+      <a href="register.html" data-i18n="f_register">事前予約</a>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <div class="links">
+      <a href="#" data-form="terms" data-i18n="l_terms">利用規約</a>
+      <a href="#" data-form="privacy" data-i18n="l_privacy">プライバシーポリシー</a>
+      <a href="#" data-form="tokusho" data-i18n="l_tokusho">特定商取引法に基づく表記</a>
+      <a href="#" data-form="booking" data-i18n="l_booking">予約・キャンセル・返金</a>
+      <a href="#" data-form="qa" data-i18n="l_contact">お問い合わせ</a>
+      <a href="#" data-form="instagram">Instagram</a>
+    </div>
+    <div data-i18n="f_c">© 2026 Guide U｜運営: Guide U 運営事務局</div>
+  </div>
+</footer>
+
+<script>
+window.I18N_EN = {
+  nav_student:"For Students", nav_parent:"For Parents", nav_mentor:"For Mentors", nav_faq:"Q&A", nav_register:"Pre-register",
+  hero_kicker:"For parents & schools",
+  hero_title:"From choosing on a hunch,<br>to <em>asking, then deciding.</em>",
+  hero_sub:"Guide U is an education app where your child can consult senpai mentors by chat or video. It's for ages 13+, and users under 18 need the consent of a parent or legal guardian.",
+  hero_cta1:"Pre-register as a parent", hero_cta2:"Contact us",
+  hv_t:"Parents use the same app.",
+  hv_b:"Parents join with the “Parent” role in the same app and link to their child via a pairing ID. Within the visibility level you set, you can keep an eye on how consultations are going.",
+  role_kicker:"How parents & schools take part",
+  role_title:"You choose how closely to watch",
+  role_lead:"Default settings are permissive; whoever needs stricter oversight takes the corresponding permissions.",
+  r1_no:"For parents", r1_t:"Pair and watch over",
+  r1_b:"Create an account with the Parent role in the same app and link to your child via pairing ID. You can review within the visibility level you set (summary + risk flags / full chat / recording playback).",
+  r2_no:"For schools", r2_t:"School contracts: recording required + summaries shared",
+  r2_b:"Under a school contract, recording is required, consultation summaries are shared, and visibility levels can be configured (summary + risk flags / full chat / recording playback). For a homeroom teacher to play recordings, the “full chat + recording playback” level must be set separately.",
+  role_n1:"We provide archives, but we do not constantly monitor all calls and chats. For urgent situations, please contact the police or other public authorities.",
+  sf_kicker:"Safety measures",
+  sf_title:"Two policies: no closed rooms, no hoarding data",
+  p1_t:"No closed rooms",
+  p1_b:"Consultations stay inside the app, protected by records and reporting: no contact exchange, detection systems, and block & report.",
+  p2_t:"No hoarding data",
+  p2_b:"Records are kept private with defined permissions and retention periods, then deleted appropriately. Records that protect should never become accumulations that endanger.",
+  d1:"<b>Age & consent</b>: At sign-up we confirm agreement to the Terms and Privacy Policy and that users are 13+; under-18s declare parental (legal guardian) consent.",
+  d2:"<b>No taking things outside the app</b>: Exchanging contact details or SNS, steering payments outside the app, and soliciting offline meetings are prohibited.",
+  d3:"<b>Chat detection</b>: Text that looks like contact details — including paraphrases — is detected, blocked, or flagged. Contact info in images (screenshots etc.) may be detected via OCR and blocked. Violations accumulate penalties.",
+  d4:"<b>Block & report</b>: Any concerning exchange can be reported in one tap and enters our review queue.",
+  d5:"<b>Recording consent up front</b>: Video calls (Daily.co) require recording consent before entry — no consent, no call. The consent screen explains the purpose, retention period, and that we do not constantly monitor calls.",
+  d6:"<b>Managed retention</b>: Chat attachments are deleted about 3 days after sending as a rule (preserved if reported). Chat text is kept up to 365 days, recordings up to 90 days as a rule (extendable under legal hold in disputes). There is no user-facing permanent cloud storage.",
+  d7:"<b>Attendance records</b>: Entry and exit are logged; no-shows are determined automatically from attendance 10 minutes after start time.",
+  d8:"<b>Secure storage</b>: Recordings are managed with encryption, access controls, and signed URLs, operated in the Japan region.",
+  sf_note:"These features do not guarantee complete prevention of harm. In an emergency, contact the police or other public authorities.",
+  dt_kicker:"How we handle data (summary)",
+  dt_title:"What we collect, and for how long",
+  dt_lead:"This is a summary of the Privacy Policy. Please refer to the full text for the authoritative version.",
+  dt1_t:"What we may collect",
+  dt1_b:"Registration info; consultation, chat, booking, and attendance records; consented recordings, transcripts, summaries, and safety flags; blocks and reports; device and usage data; push tokens; payment metadata (card numbers are processed by Stripe).",
+  dt2_t:"Retention at a glance",
+  dt2_b:"Recordings: 90 days; chat text: 365 days; attachments: ~3 days, as a rule. After account deletion, data is deleted or anonymized within 30 days in principle (statutory exceptions apply).",
+  dt_n1:"Processors (examples): Supabase, Daily.co, AWS (recordings), Firebase (push), Stripe (when paid), and external AI for safety checks (OpenAI / Anthropic / Google Gemini etc.).",
+  dt_n2:"If a web version is offered, cookies and similar may be used to provide the service (described in the Privacy Policy).",
+  dt_link:"Read the full Privacy Policy (external page)",
+  cta_title:"Encourage your child's “I want to ask”",
+  cta_sub:"Pre-register and we'll email you when the app hits the stores.",
+  cta_btn:"Pre-register as a parent",
+  f_student:"For Students", f_parent:"For Parents", f_mentor:"For Mentors", f_register:"Pre-register",
+  l_terms:"Terms of Service", l_privacy:"Privacy Policy", l_tokusho:"Commercial Transactions Act", l_booking:"Booking & Refund Policy", l_contact:"Contact",
+  f_c:"© 2026 Guide U | Operated by the Guide U Team"
+};
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>
