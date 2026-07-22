@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide U — 先輩メンターに、チャットやビデオで相談できる</title>
+<meta name="description" content="Guide Uは、先輩メンターを探し、チャットやビデオで相談できる教育アプリ。志望校のリアルを、いま通っている先輩に聞ける。">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/config.js"></script>
+<style>
+.chat{display:flex;flex-direction:column;gap:12px}
+.bubble{max-width:86%;padding:12px 16px;border-radius:16px;font-size:13.5px;line-height:1.65}
+.bubble.q{align-self:flex-end;background:var(--teal);color:#fff;border-bottom-right-radius:4px}
+.bubble.a{align-self:flex-start;background:var(--teal-50);border:1px solid var(--teal-100);border-bottom-left-radius:4px}
+.bubble .who{display:block;font-size:11px;font-weight:700;margin-bottom:3px;opacity:.75}
+.audience{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px;text-align:left}
+.aud-card{border-radius:20px;padding:34px 30px;color:#fff;display:flex;flex-direction:column;gap:8px;transition:.2s}
+.aud-card:hover{transform:translateY(-4px)}
+.aud-card h3{font-size:19px;font-weight:900}
+.aud-card p{font-size:14px;opacity:.85;margin-bottom:14px}
+.aud-card .go{font-weight:700;font-size:14px;margin-top:auto}
+@media(max-width:700px){.audience{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo"><img src="assets/icon.png" alt="Guide U" onerror="this.style.display='none'">Guide <b>U</b></a>
+    <div class="nav-links">
+      <a href="index.html" class="current" data-i18n="nav_student">高校生の方へ</a>
+      <a href="parents.html" data-i18n="nav_parent">保護者の方へ</a>
+      <a href="mentor.html" data-i18n="nav_mentor">大学生の方へ</a>
+      <a href="faq.html" data-i18n="nav_faq">Q&amp;A</a>
+    </div>
+    <div class="nav-cta">
+      <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      <a href="register.html" class="btn btn-primary btn-sm" data-i18n="nav_register">事前予約</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker" data-i18n="hero_kicker">先輩メンターに相談できる教育アプリ</span>
+      <h1 data-i18n="hero_title">志望校のこと、<br>いま通っている<em>先輩</em>に<br>聞ける。</h1>
+      <p class="sub" data-i18n="hero_sub">Guide Uは、先輩メンターを探し、チャットやビデオで相談できる教育アプリ。授業のリアル、大学生活、受験期の過ごし方——パンフレットには載らない話を、進路決定の材料に。</p>
+      <div class="hero-btns">
+        <a href="register.html" class="btn btn-primary" data-i18n="hero_cta1">事前予約する（無料）</a>
+        <a href="#" data-form="qa" class="btn btn-ghost" data-i18n="hero_cta2">お問い合わせ</a>
+      </div>
+      <div class="store-chips">
+        <span class="store-chip"> App Store<span class="soon" data-i18n="soon1">近日公開</span></span>
+        <span class="store-chip">▶ Google Play<span class="soon" data-i18n="soon2">近日公開</span></span>
+      </div>
+      <p class="hero-note" data-i18n="hero_note">対象は13歳以上。18歳未満の方は保護者（法定代理人）の同意が必要です。</p>
+    </div>
+    <div class="hero-visual">
+      <div class="chat">
+        <div class="bubble q"><span class="who" data-i18n="ch_q1w">高3・りこ</span><span data-i18n="ch_q1">経済学部志望です。1年生の授業って実際どんな感じですか？数学どのくらい使いますか？</span></div>
+        <div class="bubble a"><span class="who" data-i18n="ch_a1w">経済学部2年・メンター</span><span data-i18n="ch_a1">1年は必修のミクロ・マクロと数学系が中心！高校数学ⅡBまで固めておくとかなり楽です。ゼミ選びの話もしますか？</span></div>
+        <div class="bubble q"><span class="who" data-i18n="ch_q2w">高3・りこ</span><span data-i18n="ch_q2">聞きたいです！あとサークルと勉強の両立も…</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="ft_kicker">できること</span>
+    <h2 data-i18n="ft_title">探す・予約する・相談する、がひとつのアプリで</h2>
+    <div class="cards">
+      <div class="card"><div class="ico">🔍</div><h3 data-i18n="ft1_t">メンターを探す</h3><p data-i18n="ft1_b">大学・学部・話せるテーマからメンターを検索し、プロフィールを見て選べます。相談後はレビューも参考にできます。</p></div>
+      <div class="card"><div class="ico">📅</div><h3 data-i18n="ft2_t">公開シフトから予約</h3><p data-i18n="ft2_b">メンターが公開している時間枠から選んで予約。条件を満たせば選択した時点で確定します。飛び入り受付時間内なら直前予約ができる場合もあります。</p></div>
+      <div class="card"><div class="ico">🕒</div><h3 data-i18n="ft3_t">希望日時をリクエスト</h3><p data-i18n="ft3_b">開始48時間以上前なら、希望の日時を指定してリクエストできます。メンターの承認で確定し、承認前に料金はかかりません（48時間承認がなければ自動棄却）。</p></div>
+      <div class="card"><div class="ico">📣</div><h3 data-i18n="ft4_t">条件を出して募集</h3><p data-i18n="ft4_b">「〇〇大学の先輩に聞きたい」など条件を提示してメンターを募集。応募してくれたメンターを採用すると予約が確定します。</p></div>
+      <div class="card"><div class="ico">💬</div><h3 data-i18n="ft5_t">1対1チャット相談</h3><p data-i18n="ft5_b">テキストでじっくり相談。時間や場所を選ばず、聞きたいことを整理しながらやりとりできます。</p></div>
+      <div class="card"><div class="ico">🎥</div><h3 data-i18n="ft6_t">ビデオ通話相談</h3><p data-i18n="ft6_b">顔を見て話したいときはビデオ通話（Daily.co）。入室前に録画への同意を確認したうえで始まります。</p></div>
+    </div>
+    <p class="lead center" style="margin:30px auto 0;font-size:13.5px" data-i18n="ft_note">相談後はレビューを投稿できます。ブロック・通報機能も備えています。</p>
+  </div>
+</section>
+
+<section id="pricing" style="background:#fff">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="pr_kicker">料金（予定／公開時）</span>
+    <h2 data-i18n="pr_title">わかりやすい、一律料金</h2>
+    <p class="lead" data-i18n="pr_lead">有料なのはメンターセッションのみ。メンターごとの個別価格はなく、表示価格がお支払い総額です。</p>
+    <div class="tbl-wrap" style="max-width:640px;margin-left:auto;margin-right:auto">
+      <table class="tbl">
+        <tr><th data-i18n="pr_h1">種別</th><th data-i18n="pr_h2">価格（税込）</th></tr>
+        <tr><td data-i18n="pr_r1">チャット相談</td><td class="em" data-i18n="pr_r1v">1,500円／30分</td></tr>
+        <tr><td data-i18n="pr_r2">ビデオ相談</td><td class="em" data-i18n="pr_r2v">2,500円／30分</td></tr>
+      </table>
+    </div>
+    <ul class="notes">
+      <li data-i18n="pr_n1">30分単位の切り上げで計算します。</li>
+      <li data-i18n="pr_n2">決済はStripe経由のクレジットカード等を予定。予約確定後に与信し、原則セッション終了＋1時間で売上確定となります。</li>
+      <li data-i18n="pr_n3">カード番号はStripeが処理し、Guide Uのサーバーには保存されません。</li>
+      <li data-i18n="pr_n4">決済の準備が完了するまでの間、アプリ内で代金を請求しない場合があります。有料提供の開始時には利用規約・特定商取引法に基づく表記・本サイトを更新します。</li>
+      <li data-i18n="pr_n5">運営は収納代行・仲介であり、メンター役務の品質を保証するものではありません。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="cancel">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="cn_kicker">予約・キャンセル・返金</span>
+    <h2 data-i18n="cn_title">キャンセルポリシー（要約）</h2>
+    <p class="lead" data-i18n="cn_lead">セッション開始までの残り時間（日本時間）に応じて、キャンセル料が変わります。</p>
+    <div class="tbl-wrap" style="max-width:720px;margin-left:auto;margin-right:auto">
+      <table class="tbl">
+        <tr><th data-i18n="cn_h1">開始まで</th><th data-i18n="cn_h2">キャンセル料</th><th data-i18n="cn_h3">返金</th></tr>
+        <tr><td data-i18n="cn_r1">24時間以上</td><td data-i18n="cn_r1a">0%</td><td data-i18n="cn_r1b">全額</td></tr>
+        <tr><td data-i18n="cn_r2">12時間以上〜24時間未満</td><td data-i18n="cn_r2a">25%</td><td data-i18n="cn_r2b">残額</td></tr>
+        <tr><td data-i18n="cn_r3">2時間以上〜12時間未満</td><td data-i18n="cn_r3a">50%</td><td data-i18n="cn_r3b">残額</td></tr>
+        <tr><td data-i18n="cn_r4">2時間未満(開始前)</td><td data-i18n="cn_r4a">100%</td><td data-i18n="cn_r4b">なし</td></tr>
+        <tr><td data-i18n="cn_r5">生徒のみ無断欠席</td><td data-i18n="cn_r5a">100%</td><td data-i18n="cn_r5b">なし</td></tr>
+      </table>
+    </div>
+    <ul class="notes">
+      <li data-i18n="cn_n1">メンター都合のキャンセルは、開始までの時間を問わず生徒へ全額返金（または決済解除）のうえ、補講権を1回付与します。</li>
+      <li data-i18n="cn_n2">無断欠席は、開始から10分後の参加履歴で自動判定します。異議申立は事象から72時間以内に受け付けます。</li>
+      <li data-i18n="cn_n3">ビデオ通話は明示的な終了操作で双方退出となり、同じ予約への再入室はできません。</li>
+    </ul>
+    <div style="margin-top:26px">
+      <a href="#" data-form="booking" class="btn btn-ghost btn-sm" data-i18n="cn_link">ポリシー全文を読む（外部ページ）</a>
+    </div>
+  </div>
+</section>
+
+<section id="safety-brief" style="background:#fff">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="sf_kicker">安全への設計</span>
+    <h2 data-i18n="sf_title">「密室化しない」「溜めすぎない」</h2>
+    <p class="lead" data-i18n="sf_lead">連絡先・SNSの交換やアプリ外への誘導は禁止。チャットの検知機能、ブロック・通報、録画への事前同意など、相談を守るための仕組みを備えています。</p>
+    <div style="margin-top:30px">
+      <a href="parents.html#safety" class="btn btn-ghost" data-i18n="sf_link">安全への取り組みを詳しく見る</a>
+    </div>
+    <p class="lead center" style="margin:26px auto 0;font-size:13px" data-i18n="sf_note">※これらの機能は危険を完全に防ぐことを保証するものではありません。緊急時は警察等の公的機関にご相談ください。</p>
+  </div>
+</section>
+
+<section class="future on-dark" id="future">
+  <div class="wrap center">
+    <span class="future-badge">COMING SOON</span><br>
+    <span class="kicker" data-i18n="fu_kicker">将来機能</span>
+    <h2 data-i18n="fu_title">「誰に・何を聞くか」まで導く、12ステップの進路探索</h2>
+    <p class="lead" data-i18n="fu_lead">メンター相談を最大限活かすには、その前の自己理解が鍵。相談の前段階を支える12ステップの進路探索機能を順次リリース予定です。</p>
+    <div class="fgrid">
+      <div class="fitem"><div class="tag">PHASE 1-2</div><h3 data-i18n="fu1_t">自己理解</h3><p data-i18n="fu1_b">自分史とモチベーショングラフ、興味・強み・価値観（Will/Can/Value）の言語化をAIが伴走。</p></div>
+      <div class="fitem"><div class="tag">PHASE 3</div><h3 data-i18n="fu2_t">学部マッチング</h3><p data-i18n="fu2_b">カリキュラム・キャリア・学び方など5観点で候補学部をスコアリング。</p></div>
+      <div class="fitem"><div class="tag">PHASE 3</div><h3 data-i18n="fu3_t">大学探索</h3><p data-i18n="fu3_b">通学・学費などの家庭の条件で自動フィルターし、地図上で候補校を比較。</p></div>
+      <div class="fitem"><div class="tag">PHASE 4</div><h3 data-i18n="fu4_t">決定サポート</h3><p data-i18n="fu4_b">相談結果を統合して志望校を決定。「なぜこの大学か」の言語化までサポート。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="audience">
+  <div class="wrap center">
+    <h2 data-i18n="aud_title">あなたに合ったページへ</h2>
+    <div class="audience">
+      <a href="parents.html" class="aud-card" style="background:linear-gradient(135deg,#16544a,#22766B)">
+        <h3 data-i18n="aud1_t">保護者・学校の方へ</h3>
+        <p data-i18n="aud1_b">保護者ロールと見守りの仕組み、安全への取り組み、データの扱いをご説明します。</p>
+        <span class="go" data-i18n="aud_go">ページを見る →</span>
+      </a>
+      <a href="mentor.html" class="aud-card" style="background:linear-gradient(135deg,#113f38,#16544a)">
+        <h3 data-i18n="aud2_t">大学生の方へ</h3>
+        <p data-i18n="aud2_b">あなたの大学生活の経験が、後輩の進路の一歩になります。メンター募集中。</p>
+        <span class="go" data-i18n="aud_go2">ページを見る →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2 data-i18n="cta_title">先輩の「本音」を、進路の材料に</h2>
+      <p data-i18n="cta_sub">事前予約いただいた方に、ストア公開時にメールでお知らせします。</p>
+      <a href="register.html" class="btn btn-white" data-i18n="cta_btn">事前予約する（無料）</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo" style="font-size:17px"><img src="assets/icon.png" alt="" onerror="this.style.display='none'">Guide <b>U</b></div>
+    <div class="foot-links">
+      <a href="index.html" data-i18n="f_student">高校生の方へ</a>
+      <a href="parents.html" data-i18n="f_parent">保護者の方へ</a>
+      <a href="mentor.html" data-i18n="f_mentor">大学生の方へ</a>
+      <a href="faq.html">Q&amp;A</a>
+      <a href="register.html" data-i18n="f_register">事前予約</a>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <div class="links">
+      <a href="#" data-form="terms" data-i18n="l_terms">利用規約</a>
+      <a href="#" data-form="privacy" data-i18n="l_privacy">プライバシーポリシー</a>
+      <a href="#" data-form="tokusho" data-i18n="l_tokusho">特定商取引法に基づく表記</a>
+      <a href="#" data-form="booking" data-i18n="l_booking">予約・キャンセル・返金</a>
+      <a href="#" data-form="qa" data-i18n="l_contact">お問い合わせ</a>
+      <a href="#" data-form="instagram">Instagram</a>
+    </div>
+    <div data-i18n="f_c">© 2026 Guide U｜運営: Guide U 運営事務局</div>
+  </div>
+</footer>
+
+<script>
+window.I18N_EN = {
+  nav_student:"For Students", nav_parent:"For Parents", nav_mentor:"For Mentors", nav_faq:"Q&A", nav_register:"Pre-register",
+  hero_kicker:"An education app for consulting senpai mentors",
+  hero_title:"Ask someone who's<br><em>actually there</em> —<br>about your dream school.",
+  hero_sub:"Guide U is an education app for finding senpai mentors and consulting them by chat or video. Real classes, campus life, exam season — the stories brochures never tell, as material for your decision.",
+  hero_cta1:"Pre-register (free)", hero_cta2:"Contact us",
+  soon1:"Coming soon", soon2:"Coming soon",
+  hero_note:"For ages 13+. Users under 18 need the consent of a parent or legal guardian.",
+  ch_q1w:"Riko · Grade 12", ch_q1:"I want to study economics. What are first-year classes really like? How much math do you use?",
+  ch_a1w:"Econ major, 2nd year · Mentor", ch_a1:"First year is mostly required micro/macro and math courses! Solid high-school math will make it much easier. Want to hear about choosing a seminar too?",
+  ch_q2w:"Riko · Grade 12", ch_q2:"Yes please! And how you balance clubs and studying…",
+  ft_kicker:"What you can do",
+  ft_title:"Find, book, and consult — all in one app",
+  ft1_t:"Find a mentor", ft1_b:"Search mentors by university, faculty, and topics, browse profiles, and check reviews from past consultations.",
+  ft2_t:"Book from open slots", ft2_b:"Pick from time slots mentors have published. If conditions are met, your booking is confirmed the moment you select. Last-minute booking may be possible during walk-in hours.",
+  ft3_t:"Request your own time", ft3_b:"48+ hours before the start, you can request a specific date and time. It's confirmed when the mentor approves — no charge before approval (auto-declined if unapproved for 48 hours).",
+  ft4_t:"Post a request", ft4_b:"State your conditions — e.g. “I want to hear from a senpai at X University” — and recruit mentors. Hiring an applicant confirms the booking.",
+  ft5_t:"1-on-1 chat", ft5_b:"Take your time consulting over text — anywhere, anytime, organizing your questions as you go.",
+  ft6_t:"Video consultations", ft6_b:"When you want to talk face to face, use video calls (Daily.co). Calls start only after recording consent is confirmed before entry.",
+  ft_note:"After a session you can post a review. Block and report functions are also built in.",
+  pr_kicker:"Pricing (planned / at launch)",
+  pr_title:"Simple, flat pricing",
+  pr_lead:"Only mentor sessions are paid. There are no per-mentor prices, and the displayed price is the total you pay.",
+  pr_h1:"Type", pr_h2:"Price (tax incl.)",
+  pr_r1:"Chat consultation", pr_r1v:"¥1,500 / 30 min",
+  pr_r2:"Video consultation", pr_r2v:"¥2,500 / 30 min",
+  pr_n1:"Time is billed in 30-minute units, rounded up.",
+  pr_n2:"Payment is planned via Stripe (credit card etc.). Authorization occurs after booking confirmation; the charge is finalized about 1 hour after the session ends, as a rule.",
+  pr_n3:"Card numbers are processed by Stripe and never stored on Guide U servers.",
+  pr_n4:"Until payment processing is ready, we may not charge fees in the app. When paid service begins, the Terms, the Commercial Transactions Act disclosure, and this site will be updated.",
+  pr_n5:"Guide U acts as a payment collection agent and intermediary, and does not guarantee the quality of mentors' services.",
+  cn_kicker:"Booking, cancellation & refunds",
+  cn_title:"Cancellation policy (summary)",
+  cn_lead:"Cancellation fees depend on the time remaining before the session starts (Japan time).",
+  cn_h1:"Before start", cn_h2:"Cancellation fee", cn_h3:"Refund",
+  cn_r1:"24 hours or more", cn_r1a:"0%", cn_r1b:"Full refund",
+  cn_r2:"12 to 24 hours", cn_r2a:"25%", cn_r2b:"Remainder",
+  cn_r3:"2 to 12 hours", cn_r3a:"50%", cn_r3b:"Remainder",
+  cn_r4:"Under 2 hours (before start)", cn_r4a:"100%", cn_r4b:"None",
+  cn_r5:"Student no-show", cn_r5a:"100%", cn_r5b:"None",
+  cn_n1:"If a mentor cancels for their own reasons, the student receives a full refund (or payment release) plus one make-up session credit, regardless of how close to the start time.",
+  cn_n2:"No-shows are determined automatically from attendance records 10 minutes after the start time. Disputes are accepted within 72 hours of the event.",
+  cn_n3:"Video calls end for both parties with an explicit end action; re-entry to the same booking is not possible.",
+  cn_link:"Read the full policy (external page)",
+  sf_kicker:"Designed for safety",
+  sf_title:"No closed rooms. No hoarding data.",
+  sf_lead:"Exchanging contact details or SNS accounts and taking things outside the app are prohibited. Chat detection, block & report, and prior consent for recording help protect every consultation.",
+  sf_link:"See our safety measures in detail",
+  sf_note:"* These features do not guarantee complete prevention of harm. In an emergency, contact the police or other public authorities.",
+  fu_kicker:"Future features",
+  fu_title:"A 12-step journey that guides you to “who to ask, and what”",
+  fu_lead:"Knowing yourself is the key to getting the most out of mentor consultations. A 12-step exploration feature supporting everything before the conversation is planned for phased release.",
+  fu1_t:"Self-understanding", fu1_b:"Personal history, motivation graphs, and putting interests, strengths and values (Will/Can/Value) into words — with AI alongside.",
+  fu2_t:"Major matching", fu2_b:"Score candidate faculties on 5 dimensions including curriculum, careers, and learning style.",
+  fu3_t:"University exploration", fu3_b:"Auto-filter by family constraints like commute and tuition, and compare candidates on a map.",
+  fu4_t:"Decision support", fu4_b:"Integrate what you learned from mentors, decide — and put “why this university” into your own words.",
+  aud_title:"Find your page",
+  aud1_t:"For parents & schools", aud1_b:"The parent role, monitoring options, safety measures, and how we handle data.",
+  aud_go:"View page →",
+  aud2_t:"For university students", aud2_b:"Your campus experience can become someone's first step. We're recruiting mentors.",
+  aud_go2:"View page →",
+  cta_title:"Turn honest answers into your next step",
+  cta_sub:"Pre-register and we'll email you when the app hits the stores.",
+  cta_btn:"Pre-register (free)",
+  f_student:"For Students", f_parent:"For Parents", f_mentor:"For Mentors", f_register:"Pre-register",
+  l_terms:"Terms of Service", l_privacy:"Privacy Policy", l_tokusho:"Commercial Transactions Act", l_booking:"Booking & Refund Policy", l_contact:"Contact",
+  f_c:"© 2026 Guide U | Operated by the Guide U Team"
+};
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

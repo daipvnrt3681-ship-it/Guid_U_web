@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大学生の方へ | Guide U — あなたの経験が、後輩の一歩になる</title>
+<meta name="description" content="Guide Uはメンターとして参加する大学生を募集しています。話すのは自分の大学・学部のリアルな経験だけ。特別なスキルは必要ありません。">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/config.js"></script>
+<style>
+.quote{background:var(--card);border-left:5px solid var(--teal);border-radius:16px;padding:26px 28px}
+.quote p{font-size:15px;line-height:2}
+.quote .who{margin-top:10px;font-size:13px;color:var(--teal);font-weight:700}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo"><img src="assets/icon.png" alt="Guide U" onerror="this.style.display='none'">Guide <b>U</b></a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_student">高校生の方へ</a>
+      <a href="parents.html" data-i18n="nav_parent">保護者の方へ</a>
+      <a href="mentor.html" class="current" data-i18n="nav_mentor">大学生の方へ</a>
+      <a href="faq.html" data-i18n="nav_faq">Q&amp;A</a>
+    </div>
+    <div class="nav-cta">
+      <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      <a href="register.html#mentor" class="btn btn-primary btn-sm" data-i18n="nav_register">メンター登録</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker" data-i18n="hero_kicker">大学生メンター募集</span>
+      <h1 data-i18n="hero_title">あなたの経験が、<br>後輩の<em>一歩</em>になる。</h1>
+      <p class="sub" data-i18n="hero_sub">進路に迷う高校生がいちばん知りたいのは、「いまその大学に通っている人」の話。Guide Uのメンターに必要なのは、特別なスキルではなく、あなた自身の大学生活の経験です。</p>
+      <div class="hero-btns">
+        <a href="register.html#mentor" class="btn btn-primary" data-i18n="hero_cta1">メンターに事前予約する</a>
+        <a href="faq.html#mentor" class="btn btn-ghost" data-i18n="hero_cta2">よくある質問</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="quote" style="box-shadow:none">
+        <p data-i18n="quote">「受験生のころ、パンフレットよりも先輩の一言のほうがずっと参考になった。今度は自分が話す番だと思って登録しました。」</p>
+        <div class="who" data-i18n="quote_who">— メンター登録者の声（イメージ）</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap center">
+    <span class="kicker" data-i18n="do_kicker">メンターができること</span>
+    <h2 data-i18n="do_title">自分のペースで、経験を届ける</h2>
+    <div class="cards">
+      <div class="card"><div class="ico">🗓️</div><h3 data-i18n="do1_t">プロフィールと公開シフト</h3><p data-i18n="do1_b">大学・学部・話せるテーマをプロフィールに登録し、相談を受けられる時間枠を自分で公開。都合の良い時間だけで大丈夫です。</p></div>
+      <div class="card"><div class="ico">✋</div><h3 data-i18n="do2_t">募集への応募</h3><p data-i18n="do2_b">高校生が出している「こんな先輩に聞きたい」という募集に、自分から応募することもできます。</p></div>
+      <div class="card"><div class="ico">💬</div><h3 data-i18n="do3_t">チャット／ビデオで相談対応</h3><p data-i18n="do3_b">相談は1対1のチャットまたはビデオ通話。質問は高校生側が準備してくるので、資料づくりは不要です。</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="rw_kicker">報酬（予定）</span>
+    <h2 data-i18n="rw_title">経験を話して、報酬を受け取る</h2>
+    <p class="lead" data-i18n="rw_lead">メンターセッションは有料提供を予定しており、メンターには報酬をお支払いします。</p>
+    <div class="tbl-wrap" style="max-width:640px;margin-left:auto;margin-right:auto">
+      <table class="tbl">
+        <tr><th data-i18n="rw_h1">種別</th><th data-i18n="rw_h2">手取り目安（30分単位）</th></tr>
+        <tr><td data-i18n="rw_r1">チャット相談</td><td class="em" data-i18n="rw_r1v">400円</td></tr>
+        <tr><td data-i18n="rw_r2">ビデオ相談</td><td class="em" data-i18n="rw_r2v">700円</td></tr>
+      </table>
+    </div>
+    <ul class="notes">
+      <li data-i18n="rw_n1">特定商取引法に基づく表記をベースにした目安です。条件の詳細は正式リリース前に、事前予約いただいた方へご案内します。</li>
+      <li data-i18n="rw_n2">決済（Stripe）の準備が完了するまでの間、無償での提供期間が生じる場合があります。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <span class="kicker" data-i18n="req_kicker">参加の要件</span>
+    <h2 data-i18n="req_title">安心して相談してもらうために</h2>
+    <div class="cards">
+      <div class="card"><div class="ico">🪪</div><h3 data-i18n="req1_t">本人・在籍確認</h3><p data-i18n="req1_b">大学メールアドレス、または卒業生向けの確認経路で在籍・出身を確認します（年1回更新）。「どの大学の誰か」が明確なことが、高校生と保護者の安心につながります。</p></div>
+      <div class="card"><div class="ico">📜</div><h3 data-i18n="req2_t">行動規範への同意</h3><p data-i18n="req2_b">連絡先・SNSの交換、アプリ外決済への誘導、オフラインで会う誘いは禁止です。登録時に行動規範への同意をお願いしています。</p></div>
+      <div class="card"><div class="ico">⏱️</div><h3 data-i18n="req3_t">予約への責任</h3><p data-i18n="req3_b">確定した予約は生徒が時間を空けて待っています。メンター都合のキャンセルには下記のポリシーが適用されます。無断欠席は開始10分後の参加履歴で自動判定されます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cancel-policy">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="mc_kicker">メンターのキャンセルポリシー</span>
+    <h2 data-i18n="mc_title">やらなかった枠には、支払われません</h2>
+    <p class="lead" data-i18n="mc_lead">メンター都合でキャンセルした場合、開始までの時間を問わず、その枠の報酬は入りません。生徒には全額返金（または決済解除）のうえ補講権を1回付与します。そのうえで、直前になるほどペナルティが重くなります。</p>
+    <div class="tbl-wrap" style="max-width:800px;margin-left:auto;margin-right:auto">
+      <table class="tbl">
+        <tr><th data-i18n="mc_h1">開始まで</th><th data-i18n="mc_h2">生徒への対応</th><th data-i18n="mc_h3">メンター側</th></tr>
+        <tr><td data-i18n="mc_r1">24時間以上前</td><td data-i18n="mc_r1a">全額返金＋補講権</td><td data-i18n="mc_r1b">その枠の報酬なし。追加ペナルティなし</td></tr>
+        <tr><td data-i18n="mc_r2">2〜24時間前</td><td data-i18n="mc_r2a">全額返金＋補講権</td><td data-i18n="mc_r2b">報酬なし＋料金相当の25%を他の報酬から減額</td></tr>
+        <tr><td data-i18n="mc_r3">2時間未満</td><td data-i18n="mc_r3a">全額返金＋補講権</td><td data-i18n="mc_r3b">報酬なし＋料金相当の50%を減額＋無断欠席カウント +0.5</td></tr>
+        <tr><td data-i18n="mc_r4">無断欠席（開始後も入室なし等）</td><td data-i18n="mc_r4a">全額返金＋補講権</td><td data-i18n="mc_r4b">報酬なし＋無断欠席カウント +1（返金分の補填義務あり）</td></tr>
+      </table>
+    </div>
+    <ul class="notes">
+      <li data-i18n="mc_n1">減額（ペナルティ）は、他の実施済みセッションの送金から差し引きます。</li>
+      <li data-i18n="mc_n2">無断欠席カウントが合計3.0に達すると、原則30日間の利用停止となります（直前キャンセルの +0.5 も合計に含みます）。</li>
+      <li data-i18n="mc_n3">無断欠席は開始10分後の参加履歴で自動判定します。異議申立は事象から72時間以内に受け付けます。</li>
+    </ul>
+    <p class="lead center" style="margin:26px auto 0;font-size:13.5px" data-i18n="mc_sum">一言でいうと——「やらなかった枠には払わない。直前・無断ほどペナルティが重くなる。生徒は返金＋補講で救済する」という設計です。</p>
+  </div>
+</section>
+
+<section style="background:#fff">
+  <div class="wrap center">
+    <span class="kicker" data-i18n="get_kicker">メンターが得られるもの</span>
+    <h2 data-i18n="get_title">誰かの進路に、確かに貢献したという実感</h2>
+    <div class="cards">
+      <div class="card"><div class="ico">🌱</div><h3 data-i18n="get1_t">貢献の実感</h3><p data-i18n="get1_b">「あの一言で志望校を決められた」——あなたの何気ない経験談が、後輩の人生の分岐点に立ち会う体験になります。</p></div>
+      <div class="card"><div class="ico">🗣️</div><h3 data-i18n="get2_t">言語化の練習</h3><p data-i18n="get2_b">自分の大学生活を人に説明することは、就活の自己分析やガクチカの言語化にもつながります。</p></div>
+      <div class="card"><div class="ico">🤝</div><h3 data-i18n="get3_t">レビューという実績</h3><p data-i18n="get3_b">相談後のレビューが積み重なり、あなたの「話す力」「伝える力」の見える実績になります。</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2 data-i18n="cta_title">受験生だったあなたの経験を、次の世代へ</h2>
+      <p data-i18n="cta_sub">事前予約いただいた方に、ストア公開時と条件の詳細をメールでお知らせします。</p>
+      <a href="register.html#mentor" class="btn btn-white" data-i18n="cta_btn">メンターに事前予約する</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo" style="font-size:17px"><img src="assets/icon.png" alt="" onerror="this.style.display='none'">Guide <b>U</b></div>
+    <div class="foot-links">
+      <a href="index.html" data-i18n="f_student">高校生の方へ</a>
+      <a href="parents.html" data-i18n="f_parent">保護者の方へ</a>
+      <a href="mentor.html" data-i18n="f_mentor">大学生の方へ</a>
+      <a href="faq.html">Q&amp;A</a>
+      <a href="register.html" data-i18n="f_register">事前予約</a>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <div class="links">
+      <a href="#" data-form="terms" data-i18n="l_terms">利用規約</a>
+      <a href="#" data-form="privacy" data-i18n="l_privacy">プライバシーポリシー</a>
+      <a href="#" data-form="tokusho" data-i18n="l_tokusho">特定商取引法に基づく表記</a>
+      <a href="#" data-form="booking" data-i18n="l_booking">予約・キャンセル・返金</a>
+      <a href="#" data-form="qa" data-i18n="l_contact">お問い合わせ</a>
+      <a href="#" data-form="instagram">Instagram</a>
+    </div>
+    <div data-i18n="f_c">© 2026 Guide U｜運営: Guide U 運営事務局</div>
+  </div>
+</footer>
+
+<script>
+window.I18N_EN = {
+  nav_student:"For Students", nav_parent:"For Parents", nav_mentor:"For Mentors", nav_faq:"Q&A", nav_register:"Become a mentor",
+  hero_kicker:"Recruiting university student mentors",
+  hero_title:"Your experience becomes<br>someone's <em>first step.</em>",
+  hero_sub:"What lost high schoolers want most is to hear from someone actually attending. Being a Guide U mentor requires no special skills — just your own campus experience.",
+  hero_cta1:"Pre-register as a mentor", hero_cta2:"See the Q&A",
+  quote:"“When I was preparing for exams, one comment from a senpai helped me more than any brochure. I signed up because now it's my turn to talk.”",
+  quote_who:"— A mentor's voice (illustrative)",
+  do_kicker:"What mentors do",
+  do_title:"Share your experience, at your own pace",
+  do1_t:"Profile & open slots", do1_b:"Register your university, faculty, and topics, and publish the time slots you can take. Only the hours that suit you.",
+  do2_t:"Apply to requests", do2_b:"You can also apply to students' posted requests — “I want to hear from a senpai like this.”",
+  do3_t:"Chat / video consultations", do3_b:"Consultations are 1-on-1 chat or video calls. Students bring prepared questions, so no materials are needed.",
+  rw_kicker:"Compensation (planned)",
+  rw_title:"Get paid for sharing your experience",
+  rw_lead:"Mentor sessions are planned as a paid service, and mentors are compensated.",
+  rw_h1:"Type", rw_h2:"Approx. take-home (per 30 min)",
+  rw_r1:"Chat consultation", rw_r1v:"¥400",
+  rw_r2:"Video consultation", rw_r2v:"¥700",
+  rw_n1:"Estimates based on the Commercial Transactions Act disclosure. Full terms will be shared with pre-registered mentors before official release.",
+  rw_n2:"Until payment processing (Stripe) is ready, there may be a period of unpaid service.",
+  req_kicker:"Requirements",
+  req_title:"So students can consult with confidence",
+  req1_t:"Identity & enrollment check", req1_b:"We verify enrollment via university email, or an alumni route for graduates (renewed annually). Knowing exactly who mentors are is what reassures students and parents.",
+  req2_t:"Code of conduct", req2_b:"Exchanging contact details or SNS, steering payments outside the app, and inviting offline meetings are prohibited. We ask for your agreement at registration.",
+  req3_t:"Responsibility for bookings", req3_b:"Students set aside their time for confirmed bookings. Mentor-initiated cancellations follow the policy below. No-shows are determined automatically 10 minutes after start time.",
+  mc_kicker:"Mentor cancellation policy",
+  mc_title:"Slots you don't deliver aren't paid",
+  mc_lead:"If you cancel for your own reasons, you receive no compensation for that slot regardless of timing, and the student gets a full refund (or payment release) plus one make-up session credit. On top of that, penalties grow the closer to the start you cancel.",
+  mc_h1:"Before start", mc_h2:"For the student", mc_h3:"For the mentor",
+  mc_r1:"24+ hours", mc_r1a:"Full refund + make-up credit", mc_r1b:"No pay for the slot. No further penalty",
+  mc_r2:"2–24 hours", mc_r2a:"Full refund + make-up credit", mc_r2b:"No pay + 25% of the session fee deducted from other earnings",
+  mc_r3:"Under 2 hours", mc_r3a:"Full refund + make-up credit", mc_r3b:"No pay + 50% deducted + no-show count +0.5",
+  mc_r4:"No-show (no entry after start)", mc_r4a:"Full refund + make-up credit", mc_r4b:"No pay + no-show count +1 (obligation to cover the refund)",
+  mc_n1:"Deductions (penalties) are taken from payouts for other completed sessions.",
+  mc_n2:"When your no-show count reaches a total of 3.0, your account is suspended for 30 days as a rule (the +0.5 from last-minute cancellations counts toward this total).",
+  mc_n3:"No-shows are determined automatically from attendance records 10 minutes after start time. Disputes are accepted within 72 hours of the event.",
+  mc_sum:"In short: slots you don't deliver aren't paid; the later or more sudden the cancellation, the heavier the penalty; and students are always made whole with a refund plus a make-up session.",
+  get_kicker:"What you gain",
+  get_title:"The real feeling of having helped someone's future",
+  get1_t:"A sense of contribution", get1_b:"“That one comment helped me decide.” Your casual stories put you at the turning point of someone's life.",
+  get2_t:"Practice articulating", get2_b:"Explaining your campus life to others feeds directly into job-hunting self-analysis and interview stories.",
+  get3_t:"Reviews as a track record", get3_b:"Reviews accumulate after each session — visible proof of your ability to communicate.",
+  cta_title:"Pass your exam-season experience to the next generation",
+  cta_sub:"Pre-registered mentors will be emailed when the app launches, along with full terms.",
+  cta_btn:"Pre-register as a mentor",
+  f_student:"For Students", f_parent:"For Parents", f_mentor:"For Mentors", f_register:"Pre-register",
+  l_terms:"Terms of Service", l_privacy:"Privacy Policy", l_tokusho:"Commercial Transactions Act", l_booking:"Booking & Refund Policy", l_contact:"Contact",
+  f_c:"© 2026 Guide U | Operated by the Guide U Team"
+};
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>
