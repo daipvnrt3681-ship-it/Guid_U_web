@@ -75,9 +75,9 @@
     <h2 data-i18n="ft_title">探す・予約する・相談する、がひとつのアプリで</h2>
     <div class="cards">
       <div class="card"><div class="ico">🔍</div><h3 data-i18n="ft1_t">メンターを探す</h3><p data-i18n="ft1_b">大学・学部・話せるテーマからメンターを検索し、プロフィールを見て選べます。相談後はレビューも参考にできます。</p></div>
-      <div class="card"><div class="ico">📅</div><h3 data-i18n="ft2_t">公開シフトから予約</h3><p data-i18n="ft2_b">メンターが公開している時間枠から選んで予約。条件を満たせば選択した時点で確定します。飛び入り受付時間内なら直前予約ができる場合もあります。</p></div>
+      <div class="card"><div class="ico">📅</div><h3 data-i18n="ft2_t">公開シフトから予約</h3><p data-i18n="ft2_b">メンターが公開している時間枠から選んで申請。申請時点は承認待ちで、メンター最終承認後に確定します。飛び入り受付時間内なら直前申請できる場合もあります。</p></div>
       <div class="card"><div class="ico">🕒</div><h3 data-i18n="ft3_t">希望日時をリクエスト</h3><p data-i18n="ft3_b">開始48時間以上前なら、希望の日時を指定してリクエストできます。メンターの承認で確定し、承認前に料金はかかりません（48時間承認がなければ自動棄却）。</p></div>
-      <div class="card"><div class="ico">📣</div><h3 data-i18n="ft4_t">条件を出して募集</h3><p data-i18n="ft4_b">「〇〇大学の先輩に聞きたい」など条件を提示してメンターを募集。応募してくれたメンターを採用すると予約が確定します。</p></div>
+      <div class="card"><div class="ico">📣</div><h3 data-i18n="ft4_t">条件を出して募集</h3><p data-i18n="ft4_b">「〇〇大学の先輩に聞きたい」など条件を提示してメンターを募集。応募者を採用すると予約申請が作成されます（採用時点では未確定。メンター最終承認後に確定）。</p></div>
       <div class="card"><div class="ico">💬</div><h3 data-i18n="ft5_t">1対1チャット相談</h3><p data-i18n="ft5_b">テキストでじっくり相談。時間や場所を選ばず、聞きたいことを整理しながらやりとりできます。</p></div>
       <div class="card"><div class="ico">🎥</div><h3 data-i18n="ft6_t">ビデオ通話相談</h3><p data-i18n="ft6_b">顔を見て話したいときはビデオ通話（Daily.co）。入室前に録画への同意を確認したうえで始まります。</p></div>
     </div>
@@ -99,10 +99,10 @@
     </div>
     <ul class="notes">
       <li data-i18n="pr_n1">30分単位の切り上げで計算します。</li>
-      <li data-i18n="pr_n2">決済はStripe経由のクレジットカード等を予定。予約確定後に与信し、原則セッション終了＋1時間で売上確定となります。</li>
+      <li data-i18n="pr_n2">決済はStripe経由のクレジットカード等。予約確定後に与信し、原則セッション終了＋1時間で売上確定となります。</li>
       <li data-i18n="pr_n3">カード番号はStripeが処理し、Guide Uのサーバーには保存されません。</li>
-      <li data-i18n="pr_n4">決済の準備が完了するまでの間、アプリ内で代金を請求しない場合があります。有料提供の開始時には利用規約・特定商取引法に基づく表記・本サイトを更新します。</li>
-      <li data-i18n="pr_n5">運営は収納代行・仲介であり、メンター役務の品質を保証するものではありません。</li>
+      <li data-i18n="pr_n4">販売主体は運営者（Guide U）です。メンターは業務委託先としてセッションを実施します。</li>
+      <li data-i18n="pr_n5">有料提供の詳細は利用規約・特定商取引法に基づく表記をご確認ください。</li>
     </ul>
   </div>
 </section>
@@ -123,9 +123,9 @@
       </table>
     </div>
     <ul class="notes">
-      <li data-i18n="cn_n1">メンター都合のキャンセルは、開始までの時間を問わず生徒へ全額返金（または決済解除）のうえ、補講権を1回付与します。</li>
-      <li data-i18n="cn_n2">無断欠席は、開始から10分後の参加履歴で自動判定します。異議申立は事象から72時間以内に受け付けます。</li>
-      <li data-i18n="cn_n3">ビデオ通話は明示的な終了操作で双方退出となり、同じ予約への再入室はできません。</li>
+      <li data-i18n="cn_n1">メンター都合のキャンセルは、開始までの時間を問わず生徒へ全額返金（または決済解除）します。補講権はありません。</li>
+      <li data-i18n="cn_n2">無断欠席は、開始から10分後の参加履歴で自動判定します。双方不参加の場合、生徒に当該予約金額が発生し、メンター報酬はありません。異議申立は事象から72時間以内に受け付けます。</li>
+      <li data-i18n="cn_n3">ビデオ通話は双方退出後に完了し、同じ予約への再入室はできません（回線切断時は予約時間内に再入室可）。</li>
     </ul>
     <div style="margin-top:26px">
       <a href="#" data-form="booking" class="btn btn-ghost btn-sm" data-i18n="cn_link">ポリシー全文を読む（外部ページ）</a>
@@ -227,9 +227,9 @@ window.I18N_EN = {
   ft_kicker:"What you can do",
   ft_title:"Find, book, and consult — all in one app",
   ft1_t:"Find a mentor", ft1_b:"Search mentors by university, faculty, and topics, browse profiles, and check reviews from past consultations.",
-  ft2_t:"Book from open slots", ft2_b:"Pick from time slots mentors have published. If conditions are met, your booking is confirmed the moment you select. Last-minute booking may be possible during walk-in hours.",
+  ft2_t:"Book from open slots", ft2_b:"Request a published mentor time slot. Requests start as pending and are confirmed only after the mentor's final approval. Last-minute requests may be possible during walk-in hours.",
   ft3_t:"Request your own time", ft3_b:"48+ hours before the start, you can request a specific date and time. It's confirmed when the mentor approves — no charge before approval (auto-declined if unapproved for 48 hours).",
-  ft4_t:"Post a request", ft4_b:"State your conditions — e.g. “I want to hear from a senpai at X University” — and recruit mentors. Hiring an applicant confirms the booking.",
+  ft4_t:"Post a request", ft4_b:"State your conditions — e.g. “I want to hear from a senpai at X University” — and recruit mentors. Hiring an applicant creates a pending booking request (not confirmed until the mentor's final approval).",
   ft5_t:"1-on-1 chat", ft5_b:"Take your time consulting over text — anywhere, anytime, organizing your questions as you go.",
   ft6_t:"Video consultations", ft6_b:"When you want to talk face to face, use video calls (Daily.co). Calls start only after recording consent is confirmed before entry.",
   ft_note:"After a session you can post a review. Block and report functions are also built in.",
@@ -242,8 +242,8 @@ window.I18N_EN = {
   pr_n1:"Time is billed in 30-minute units, rounded up.",
   pr_n2:"Payment is planned via Stripe (credit card etc.). Authorization occurs after booking confirmation; the charge is finalized about 1 hour after the session ends, as a rule.",
   pr_n3:"Card numbers are processed by Stripe and never stored on Guide U servers.",
-  pr_n4:"Until payment processing is ready, we may not charge fees in the app. When paid service begins, the Terms, the Commercial Transactions Act disclosure, and this site will be updated.",
-  pr_n5:"Guide U acts as a payment collection agent and intermediary, and does not guarantee the quality of mentors' services.",
+  pr_n4:"Guide U is the merchant of record. Mentors deliver sessions as independent contractors.",
+  pr_n5:"See the Terms and the Commercial Transactions Act disclosure for full paid-service details.",
   cn_kicker:"Booking, cancellation & refunds",
   cn_title:"Cancellation policy (summary)",
   cn_lead:"Cancellation fees depend on the time remaining before the session starts (Japan time).",
@@ -253,9 +253,9 @@ window.I18N_EN = {
   cn_r3:"2 to 12 hours", cn_r3a:"50%", cn_r3b:"Remainder",
   cn_r4:"Under 2 hours (before start)", cn_r4a:"100%", cn_r4b:"None",
   cn_r5:"Student no-show", cn_r5a:"100%", cn_r5b:"None",
-  cn_n1:"If a mentor cancels for their own reasons, the student receives a full refund (or payment release) plus one make-up session credit, regardless of how close to the start time.",
-  cn_n2:"No-shows are determined automatically from attendance records 10 minutes after the start time. Disputes are accepted within 72 hours of the event.",
-  cn_n3:"Video calls end for both parties with an explicit end action; re-entry to the same booking is not possible.",
+  cn_n1:"If a mentor cancels for their own reasons, the student receives a full refund (or payment release) only — no make-up credit — regardless of how close to the start time.",
+  cn_n2:"No-shows are determined automatically from attendance records 10 minutes after the start time. If both parties no-show, the student is charged the booking amount and the mentor is unpaid. Disputes are accepted within 72 hours of the event.",
+  cn_n3:"Video calls complete after both parties leave; re-entry to the same booking is not possible (re-entry after a disconnect is allowed within the booked window).",
   cn_link:"Read the full policy (external page)",
   sf_kicker:"Designed for safety",
   sf_title:"No closed rooms. No hoarding data.",
